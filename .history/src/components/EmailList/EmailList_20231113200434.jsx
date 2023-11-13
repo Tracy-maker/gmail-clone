@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import RedoIcon from "@mui/icons-material/Redo";
@@ -10,7 +10,6 @@ import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Section from "../Section";
 import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
-import EmailRow from "../EmailRow/EmailRow";
 
 const EmailListContainer = styled.div`
   flex: 1;
@@ -41,9 +40,7 @@ const EmailListList = styled.div`
   padding-bottom: 20%;
 `;
 
-const EmailList = () => {
-  const [emails, setEmails] = useState([]);
-
+const EmailList=()=> {
   return (
     <EmailListContainer>
       <StyledEmailListSettings>
@@ -79,16 +76,9 @@ const EmailList = () => {
         <Section Icon={People} title="Social" color="#1A73E8" />
         <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
       </StyledEmailListSections>
-      <EmailListList>
-        <EmailRow
-          title="Twitch"
-          subject="what you are guys don't understands, for us, kissing is as important as any part of it."
-          description="This is a text"
-          time="10pm"
-        />
-      </EmailListList>
+      <EmailListList></EmailListList>
     </EmailListContainer>
   );
-};
+}
 
 export default EmailList;

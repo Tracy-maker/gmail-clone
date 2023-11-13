@@ -1,16 +1,11 @@
 import { Icon } from "@material-ui/core";
 import {
   ArrowBack,
-  CheckCircle,
   Delete,
   Email,
   Error,
-  ExitToApp,
   LabelImportant,
-  MoreVert,
   MoveToInbox,
-  Print,
-  UnfoldMore,
   WatchLater,
 } from "@mui/icons-material";
 import React from "react";
@@ -104,39 +99,39 @@ const Mail = () => {
           <Icon>
             <WatchLater />
           </Icon>
-          <Icon>
-            <CheckCircle />
-          </Icon>
-          <Icon>
-            <LabelImportant />
-          </Icon>
-          <Icon>
-            <MoreVert />
-          </Icon>
+          <IconButton>
+            <CheckCircleIcon />
+          </IconButton>
+          <IconButton>
+            <LabelImportantIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
         </MailToolsLeft>
 
         <div className="mail__toolsRight">
-          <Icon>
-            <UnfoldMore />
-          </Icon>
-          <Icon>
-            <Print />
-          </Icon>
-          <Icon>
-            <ExitToApp />
-          </Icon>
+          <IconButton>
+            <UnfoldMoreIcon />
+          </IconButton>
+          <IconButton>
+            <PrintIcon />
+          </IconButton>
+          <IconButton>
+            <ExitToAppIcon />
+          </IconButton>
         </div>
       </MailTools>
       <MailBody>
         <MailBodyHeader>
-          <MailBodyHeaderText></MailBodyHeaderText>
+          <MailBodyHeaderText>{selectedMail?.subject}</MailBodyHeaderText>
           <MailImportantIcon />
-          <p className="mail__title"></p>
-          <MailTime></MailTime>
+          <p className="mail__title">{selectedMail?.title}</p>
+          <MailTime>{selectedMail?.time}</MailTime>
         </MailBodyHeader>
 
         <MailMessage>
-          <MailMessageText></MailMessageText>
+          <MailMessageText>{selectedMail?.description}</MailMessageText>
         </MailMessage>
       </MailBody>
     </MailContainer>

@@ -82,9 +82,7 @@ const EmailList = () => {
       <EmailListList>
         <EmailRow
           title="Twitch"
-          subject="what you are guys don't understands, for us, kissing is as important as any part of it."
-          description="This is a text"
-          time="10pm"
+          subject="what you are guys don't understands, for us,kissing is as important as any part of it."
         />
       </EmailListList>
     </EmailListContainer>

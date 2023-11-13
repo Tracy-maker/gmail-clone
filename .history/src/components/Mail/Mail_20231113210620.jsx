@@ -1,21 +1,11 @@
-import { Icon } from "@material-ui/core";
-import {
-  ArrowBack,
-  CheckCircle,
-  Delete,
-  Email,
-  Error,
-  ExitToApp,
-  LabelImportant,
-  MoreVert,
-  MoveToInbox,
-  Print,
-  UnfoldMore,
-  WatchLater,
-} from "@mui/icons-material";
+import { LabelImportant } from "@mui/icons-material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+
+
+
 
 const MailContainer = styled.div`
   flex: 1;
@@ -86,57 +76,57 @@ const Mail = () => {
     <MailContainer>
       <MailTools>
         <MailToolsLeft>
-          <Icon onClick={() => history.push("/")}>
-            <ArrowBack />
-          </Icon>
-          <Icon>
-            <MoveToInbox />
-          </Icon>
-          <Icon>
-            <Error />
-          </Icon>
-          <Icon>
-            <Delete />
-          </Icon>
-          <Icon>
-            <Email />
-          </Icon>
-          <Icon>
-            <WatchLater />
-          </Icon>
-          <Icon>
-            <CheckCircle />
-          </Icon>
-          <Icon>
-            <LabelImportant />
-          </Icon>
-          <Icon>
-            <MoreVert />
-          </Icon>
+          <IconButton onClick={() => history.push("/")}>
+            <ArrowBackIcon />
+          </IconButton>
+          <IconButton>
+            <MoveToInboxIcon />
+          </IconButton>
+          <IconButton>
+            <ErrorIcon />
+          </IconButton>
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+          <IconButton>
+            <EmailIcon />
+          </IconButton>
+          <IconButton>
+            <WatchLaterIcon />
+          </IconButton>
+          <IconButton>
+            <CheckCircleIcon />
+          </IconButton>
+          <IconButton>
+            <LabelImportantIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
         </MailToolsLeft>
 
         <div className="mail__toolsRight">
-          <Icon>
-            <UnfoldMore />
-          </Icon>
-          <Icon>
-            <Print />
-          </Icon>
-          <Icon>
-            <ExitToApp />
-          </Icon>
+          <IconButton>
+            <UnfoldMoreIcon />
+          </IconButton>
+          <IconButton>
+            <PrintIcon />
+          </IconButton>
+          <IconButton>
+            <ExitToAppIcon />
+          </IconButton>
         </div>
       </MailTools>
       <MailBody>
         <MailBodyHeader>
-          <MailBodyHeaderText></MailBodyHeaderText>
+          <MailBodyHeaderText>{selectedMail?.subject}</MailBodyHeaderText>
           <MailImportantIcon />
-          <p className="mail__title"></p>
-          <MailTime></MailTime>
+          <p className="mail__title">{selectedMail?.title}</p>
+          <MailTime>{selectedMail?.time}</MailTime>
         </MailBodyHeader>
 
         <MailMessage>
-          <MailMessageText></MailMessageText>
+          <MailMessageText>{selectedMail?.description}</MailMessageText>
         </MailMessage>
       </MailBody>
     </MailContainer>
@@ -144,3 +134,4 @@ const Mail = () => {
 };
 
 export default Mail;
+

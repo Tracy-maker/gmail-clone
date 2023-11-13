@@ -10,7 +10,6 @@ import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Section from "../Section";
 import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
-import EmailRow from "../EmailRow/EmailRow";
 
 const EmailListContainer = styled.div`
   flex: 1;
@@ -41,8 +40,8 @@ const EmailListList = styled.div`
   padding-bottom: 20%;
 `;
 
-const EmailList = () => {
-  const [emails, setEmails] = useState([]);
+const EmailList=()=> {
+const [emails, setEmails]= useState([])
 
   return (
     <EmailListContainer>
@@ -80,15 +79,10 @@ const EmailList = () => {
         <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
       </StyledEmailListSections>
       <EmailListList>
-        <EmailRow
-          title="Twitch"
-          subject="what you are guys don't understands, for us, kissing is as important as any part of it."
-          description="This is a text"
-          time="10pm"
-        />
+        {email}
       </EmailListList>
     </EmailListContainer>
   );
-};
+}
 
 export default EmailList;

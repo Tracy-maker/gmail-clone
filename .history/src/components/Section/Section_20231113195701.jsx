@@ -20,6 +20,7 @@ const StyledSection = styled.div`
 
   &:hover {
     background-color: whitesmoke;
+    border-width: 3px !important;
   }
 `;
 
@@ -28,7 +29,7 @@ const Title = styled.h4`
   margin-left: 15px;
 `;
 
-const Section=({ Icon, title, color, selected })=> {
+function Section({ Icon, title, color, selected }) {
   return (
     <StyledSection selected={selected} color={color}>
       <Icon />

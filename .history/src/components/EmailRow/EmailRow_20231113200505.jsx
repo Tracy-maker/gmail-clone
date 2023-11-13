@@ -1,9 +1,12 @@
 import React from "react";
+import React from "react";
 import styled from "styled-components";
 import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import { Checkbox, IconButton } from "@mui/material";
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { selectMail } from "./features/mailSlice";
 
 const EmailRowContainer = styled.div`
   display: flex;
@@ -44,7 +47,7 @@ const EmailRowMessageText = styled.h4`
   padding-right: 5px;
 `;
 
-const EmailRowDescription = styled.p`
+const EmailRowDescription = styled.span`
   font-weight: 400;
   color: gray;
 `;
@@ -57,8 +60,23 @@ const EmailRowTime = styled.p`
 
 const EmailRow = ({ id, title, subject, description, time }) => {
 
+  const navigate = useNavigate();
+
+  const openMail = () => {
+    dispatch(
+      selectMail({
+        id,
+        title,
+        subject,
+        description,
+        time,
+      })
+    );
+    navigate("/mail");
+  };
+
   return (
-    <EmailRowContainer >
+    <EmailRowContainer onClick={openMail}>
       <EmailRowOptions>
         <Checkbox />
         <IconButton>
@@ -71,8 +89,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
       <EmailRowTitle>{title}</EmailRowTitle>
       <EmailRowMessage>
         <EmailRowMessageText>
-          {subject}
-           <EmailRowDescription> -{description}</EmailRowDescription>
+          {subject} <EmailRowDescription>-{description}</EmailRowDescription>
         </EmailRowMessageText>
       </EmailRowMessage>
       <EmailRowTime>{time}</EmailRowTime>

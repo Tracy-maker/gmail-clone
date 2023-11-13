@@ -44,7 +44,7 @@ const EmailRowMessageText = styled.h4`
   padding-right: 5px;
 `;
 
-const EmailRowDescription = styled.p`
+const EmailRowDescription = styled.span`
   font-weight: 400;
   color: gray;
 `;
@@ -71,8 +71,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
       <EmailRowTitle>{title}</EmailRowTitle>
       <EmailRowMessage>
         <EmailRowMessageText>
-          {subject}
-           <EmailRowDescription> -{description}</EmailRowDescription>
+          {subject} <EmailRowDescription>-{description}</EmailRowDescription>
         </EmailRowMessageText>
       </EmailRowMessage>
       <EmailRowTime>{time}</EmailRowTime>

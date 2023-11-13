@@ -4,6 +4,8 @@ import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlin
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import { Checkbox, IconButton } from "@mui/material";
 
+import { useNavigate } from "react-router-dom";
+
 
 const EmailRowContainer = styled.div`
   display: flex;
@@ -44,7 +46,7 @@ const EmailRowMessageText = styled.h4`
   padding-right: 5px;
 `;
 
-const EmailRowDescription = styled.p`
+const EmailRowDescription = styled.span`
   font-weight: 400;
   color: gray;
 `;
@@ -56,6 +58,10 @@ const EmailRowTime = styled.p`
 `;
 
 const EmailRow = ({ id, title, subject, description, time }) => {
+
+  const navigate = useNavigate();
+
+ 
 
   return (
     <EmailRowContainer >
@@ -71,8 +77,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
       <EmailRowTitle>{title}</EmailRowTitle>
       <EmailRowMessage>
         <EmailRowMessageText>
-          {subject}
-           <EmailRowDescription> -{description}</EmailRowDescription>
+          {subject} <EmailRowDescription>-{description}</EmailRowDescription>
         </EmailRowMessageText>
       </EmailRowMessage>
       <EmailRowTime>{time}</EmailRowTime>

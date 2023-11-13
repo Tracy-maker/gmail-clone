@@ -5,11 +5,9 @@ import {
   Delete,
   Email,
   Error,
-  ExitToApp,
   LabelImportant,
   MoreVert,
   MoveToInbox,
-  Print,
   UnfoldMore,
   WatchLater,
 } from "@mui/icons-material";
@@ -120,23 +118,23 @@ const Mail = () => {
             <UnfoldMore />
           </Icon>
           <Icon>
-            <Print />
+            <PrintIcon />
           </Icon>
-          <Icon>
-            <ExitToApp />
-          </Icon>
+          <IconButton>
+            <ExitToAppIcon />
+          </IconButton>
         </div>
       </MailTools>
       <MailBody>
         <MailBodyHeader>
-          <MailBodyHeaderText></MailBodyHeaderText>
+          <MailBodyHeaderText>{selectedMail?.subject}</MailBodyHeaderText>
           <MailImportantIcon />
-          <p className="mail__title"></p>
-          <MailTime></MailTime>
+          <p className="mail__title">{selectedMail?.title}</p>
+          <MailTime>{selectedMail?.time}</MailTime>
         </MailBodyHeader>
 
         <MailMessage>
-          <MailMessageText></MailMessageText>
+          <MailMessageText>{selectedMail?.description}</MailMessageText>
         </MailMessage>
       </MailBody>
     </MailContainer>

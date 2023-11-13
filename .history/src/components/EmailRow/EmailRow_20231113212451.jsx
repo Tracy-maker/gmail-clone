@@ -44,7 +44,7 @@ const EmailRowMessageText = styled.h4`
   padding-right: 5px;
 `;
 
-const EmailRowDescription = styled.p`
+const EmailRowDescription = styled.span`
   font-weight: 400;
   color: gray;
 `;

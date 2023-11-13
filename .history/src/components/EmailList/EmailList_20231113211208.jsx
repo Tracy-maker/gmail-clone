@@ -79,14 +79,7 @@ const EmailList = () => {
         <Section Icon={People} title="Social" color="#1A73E8" />
         <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
       </StyledEmailListSections>
-      <EmailListList>
-        <EmailRow
-          title="Twitch"
-          subject="what you are guys don't understands, for us, kissing is as important as any part of it."
-          description="This is a text"
-          time="10pm"
-        />
-      </EmailListList>
+      <EmailListList><EmailRow/></EmailListList>
     </EmailListContainer>
   );
 };
