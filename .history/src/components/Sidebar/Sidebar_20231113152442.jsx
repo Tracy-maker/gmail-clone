@@ -24,8 +24,8 @@ const SidebarContainer = styled.div`
 `;
 
 const ComposeButton = styled(Button)`
-  margin-top: 20px !important;
-  margin-left: 10px !important;
+  margin-top: 20px ;
+  margin-left: 10px ;
   margin-bottom: 20px !important;
   text-transform: capitalize !important;
   color: gray;
@@ -36,11 +36,12 @@ const ComposeButton = styled(Button)`
 
 const Footer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
 `;
+
 const FooterIcons = styled.div`
+  margin: 20px;
   display: flex;
-  justify-content: center;
 `;
 
 const Sidebar = () => {

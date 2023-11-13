@@ -10,9 +10,8 @@ import {
   Phone,
   Star,
 } from "@mui/icons-material";
-import { Button } from "@material-ui/core";
-import AddIcon from "@mui/icons-material/Add";
-import { Icon } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import { Icon} from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import SidebarOption from "../SidebarOption";
@@ -23,10 +22,10 @@ const SidebarContainer = styled.div`
   padding-right: 20px;
 `;
 
-const ComposeButton = styled(Button)`
-  margin-top: 20px !important;
+const ComposeButton = styled.button`
+  margin-top: 15px !important;
   margin-left: 10px !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
   text-transform: capitalize !important;
   color: gray;
   padding: 15px !important;
@@ -38,6 +37,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const FooterIcons = styled.div`
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ const FooterIcons = styled.div`
 const Sidebar = () => {
   return (
     <SidebarContainer>
-      <ComposeButton startIcon={<AddIcon fontSize="large" />}>
+      <ComposeButton startIcon={<Add fontSize="large" />}>
         Compose
       </ComposeButton>
 

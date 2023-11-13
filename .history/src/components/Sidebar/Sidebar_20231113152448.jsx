@@ -36,11 +36,12 @@ const ComposeButton = styled(Button)`
 
 const Footer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
 `;
+
 const FooterIcons = styled.div`
+  margin: 20px;
   display: flex;
-  justify-content: center;
 `;
 
 const Sidebar = () => {

@@ -1,10 +1,9 @@
 import React from "react";
+import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import styled from "styled-components";
 import { Route, Router, Routes } from "react-router-dom";
-import Mail from "./components/Mail";
-import EmailList from "./components/EmailList/EmailList";
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -23,8 +22,8 @@ function App() {
         <AppBody>
           <Sidebar />
           <Routes>
-            <Route path="/mail" element={<Mail />} />
-            <Route path="/" element={<EmailList />} />
+          <Route path="/mail" element={<Mail />} />
+              <Route path="/" element={<EmailList />} />
           </Routes>
         </AppBody>
       </AppContainer>
