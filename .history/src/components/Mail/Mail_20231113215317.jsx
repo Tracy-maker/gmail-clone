@@ -38,7 +38,7 @@ const MailBody = styled.div`
   margin: 30px;
   background-color: white;
   padding: 20px;
-  height: 85%;
+  height: 90%;
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.24);
 `;
 
@@ -86,7 +86,7 @@ const Mail = () => {
     <MailContainer>
       <MailTools>
         <MailToolsLeft>
-          <Icon onClick={() => history("/")}>
+          <Icon onClick={() => history.push("/")}>
             <ArrowBack />
           </Icon>
           <Icon>
