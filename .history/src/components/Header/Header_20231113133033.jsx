@@ -5,7 +5,7 @@ import {
   Apps,
   ArrowDropDown,
   Menu,
-  Notifications,
+  NotificationAdd,
   Search,
 } from "@mui/icons-material";
 
@@ -80,7 +80,7 @@ const Header = () => {
           <Apps />
         </IconButton>
         <IconButton>
-          <Notifications/>
+          <NotificationAdd />
         </IconButton>
         <Avatar />
       </HeaderRight>

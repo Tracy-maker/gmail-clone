@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Avatar, IconButton } from "@mui/material";
-import {
-  Apps,
-  ArrowDropDown,
-  Menu,
-  Notifications,
-  Search,
-} from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import { Apps, ArrowDropDown, Menu, Search } from "@mui/icons-material";
+
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -60,7 +55,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderLeft>
         <IconButton>
-          <Menu />
+          <Menu/>
         </IconButton>
 
         <HeaderImage
@@ -70,7 +65,7 @@ const Header = () => {
       </HeaderLeft>
 
       <HeaderMiddle>
-        <Search />
+        <Search/>
         <input type="text" placeholder="Search mail" />
         <ArrowDropDown className="header__inputCaret" />
       </HeaderMiddle>
@@ -80,7 +75,7 @@ const Header = () => {
           <Apps />
         </IconButton>
         <IconButton>
-          <Notifications/>
+          <NotificationsIcon />
         </IconButton>
         <Avatar />
       </HeaderRight>

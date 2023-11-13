@@ -1,5 +1,5 @@
-import { Add, Duo, Person, Phone } from "@mui/icons-material";
-import { Icon, IconButton } from "@mui/material";
+import { Add, Duo, IconButton, Person, Phone } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,7 +9,7 @@ const SidebarContainer = styled.div`
   padding-right: 20px;
 `;
 
-const ComposeButton = styled.button`
+const ComposeButton = styled(Button)`
   margin-top: 15px !important;
   margin-left: 10px !important;
   margin-bottom: 15px !important;
@@ -39,15 +39,15 @@ const Sidebar = () => {
 
       <Footer>
         <FooterIcons>
-          <Icon>
+          <IconButton>
             <Person />
-          </Icon>
-          <Icon>
+          </IconButton>
+          <IconButton>
             <Duo />
-          </Icon>
-          <Icon>
+          </IconButton>
+          <IconButton>
             <Phone />
-          </Icon>
+          </IconButton>
         </FooterIcons>
       </Footer>
     </SidebarContainer>

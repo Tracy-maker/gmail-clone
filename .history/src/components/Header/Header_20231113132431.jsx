@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Avatar, IconButton } from "@mui/material";
-import {
-  Apps,
-  ArrowDropDown,
-  Menu,
-  Notifications,
-  Search,
-} from "@mui/icons-material";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import AppsIcon from "@material-ui/icons/Apps";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import { Avatar, IconButton } from "@material-ui/core";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -60,7 +58,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderLeft>
         <IconButton>
-          <Menu />
+          <MenuIcon />
         </IconButton>
 
         <HeaderImage
@@ -70,17 +68,17 @@ const Header = () => {
       </HeaderLeft>
 
       <HeaderMiddle>
-        <Search />
+        <SearchIcon />
         <input type="text" placeholder="Search mail" />
-        <ArrowDropDown className="header__inputCaret" />
+        <ArrowDropDownIcon className="header__inputCaret" />
       </HeaderMiddle>
 
       <HeaderRight>
         <IconButton>
-          <Apps />
+          <AppsIcon />
         </IconButton>
         <IconButton>
-          <Notifications/>
+          <NotificationsIcon />
         </IconButton>
         <Avatar />
       </HeaderRight>

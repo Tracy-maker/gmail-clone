@@ -1,5 +1,4 @@
 import { Add, Duo, Person, Phone } from "@mui/icons-material";
-import { Icon, IconButton } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
@@ -39,15 +38,15 @@ const Sidebar = () => {
 
       <Footer>
         <FooterIcons>
-          <Icon>
+          <IconButton>
             <Person />
-          </Icon>
-          <Icon>
+          </IconButton>
+          <IconButton>
             <Duo />
-          </Icon>
-          <Icon>
+          </IconButton>
+          <IconButton>
             <Phone />
-          </Icon>
+          </IconButton>
         </FooterIcons>
       </Footer>
     </SidebarContainer>
