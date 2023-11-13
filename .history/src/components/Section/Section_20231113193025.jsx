@@ -11,7 +11,7 @@ const StyledSection = styled.div`
   color: grey;
   border-width: 0 !important;
 
-  ${(props) =>
+  ${props =>
     props.selected &&
     `
     background-color: whitesmoke;
@@ -40,3 +40,4 @@ function Section({ Icon, title, color, selected }) {
 }
 
 export default Section;
+

@@ -8,8 +8,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Section from "../Section";
-import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
 
 const EmailListContainer = styled.div`
   flex: 1;
@@ -71,11 +69,7 @@ function EmailList() {
           </IconButton>
         </div>
       </StyledEmailListSettings>
-      <StyledEmailListSections>
-        <Section Icon={Inbox} title="Primary" color="red" selected={true} />
-        <Section Icon={People} title="Social" color="#1A73E8" />
-        <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
-      </StyledEmailListSections>
+      <StyledEmailListSections></StyledEmailListSections>
       <EmailListList></EmailListList>
     </EmailListContainer>
   );

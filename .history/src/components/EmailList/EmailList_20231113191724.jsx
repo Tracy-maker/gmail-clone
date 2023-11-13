@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import RedoIcon from "@mui/icons-material/Redo";
@@ -8,8 +8,12 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Section from "../Section";
-import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
+import InboxIcon from "@mui/icons-material/Inbox";
+import PeopleIcon from "@mui/icons-material/People";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import Section from "./Section";
+import EmailRow from "./EmailRow";
+import { db } from "./firebase";
 
 const EmailListContainer = styled.div`
   flex: 1;
@@ -41,10 +45,25 @@ const EmailListList = styled.div`
 `;
 
 function EmailList() {
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    db.collection("emails")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setEmails(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
+  }, []);
+
   return (
     <EmailListContainer>
       <StyledEmailListSettings>
-        <div>
+        <div className="emailList_settings_left">
           <Checkbox />
           <IconButton>
             <ArrowDropDownIcon />
@@ -56,7 +75,7 @@ function EmailList() {
             <MoreVertIcon />
           </IconButton>
         </div>
-        <div>
+        <div className="emailList_settings_right">
           <IconButton>
             <ChevronLeftIcon />
           </IconButton>
@@ -72,13 +91,23 @@ function EmailList() {
         </div>
       </StyledEmailListSettings>
       <StyledEmailListSections>
-        <Section Icon={Inbox} title="Primary" color="red" selected={true} />
-        <Section Icon={People} title="Social" color="#1A73E8" />
-        <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
+      
       </StyledEmailListSections>
-      <EmailListList></EmailListList>
+      <EmailListList>
+        {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toLocaleString()}
+          />
+        ))}
+      </EmailListList>
     </EmailListContainer>
   );
 }
 
 export default EmailList;
+

@@ -9,7 +9,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Section from "../Section";
-import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
+import { Inbox,LocalOfferOutlined, People } from "@mui/icons-material";
 
 const EmailListContainer = styled.div`
   flex: 1;
