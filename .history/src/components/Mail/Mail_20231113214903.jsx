@@ -131,7 +131,7 @@ const Mail = () => {
         <MailBodyHeader>
           <MailBodyHeaderText></MailBodyHeaderText>
           <MailImportantIcon />
-          <p></p>
+          <p ></p>
           <MailTime></MailTime>
         </MailBodyHeader>
 

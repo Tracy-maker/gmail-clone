@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-
+import { auth, provider } from "./firebase";
+import { useDispatch } from "react-redux";
+import { login } from "./features/userSlice";
 
 const LoginContainer = styled.div`
   background-color: #f2f2f2;
@@ -23,7 +25,7 @@ const GmailLogo = styled.img`
 
 const LoginButton = styled(Button)`
   && {
-    background-color: #1a73e8; 
+    background-color: #1a73e8; /* Gmail blue */
     color: white;
   }
 `;
@@ -37,7 +39,7 @@ const Login = () => {
           src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-16.png"
           alt="gmail m logo"
         />
-        <LoginButton variant="contained" color="primary" >
+        <LoginButton variant="contained" color="primary" onClick={signIn}>
           Login
         </LoginButton>
       </LoginContent>

@@ -59,7 +59,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
   const history = useNavigate();
 
   return (
-    <EmailRowContainer onClick={() => history("/mail")}>
+    <EmailRowContainer onClick={()=>history("/mail")}>
       <EmailRowOptions>
         <Checkbox />
         <IconButton>

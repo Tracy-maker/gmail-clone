@@ -5,6 +5,7 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import { Checkbox, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+
 const EmailRowContainer = styled.div`
   display: flex;
   align-items: center;
@@ -56,10 +57,11 @@ const EmailRowTime = styled.p`
 `;
 
 const EmailRow = ({ id, title, subject, description, time }) => {
-  const history = useNavigate();
+
+  const history= useNavigate();
 
   return (
-    <EmailRowContainer onClick={() => history("/mail")}>
+    <EmailRowContainer >
       <EmailRowOptions>
         <Checkbox />
         <IconButton>
@@ -73,7 +75,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
       <EmailRowMessage>
         <EmailRowMessageText>
           {subject}
-          <EmailRowDescription> -{description}</EmailRowDescription>
+           <EmailRowDescription> -{description}</EmailRowDescription>
         </EmailRowMessageText>
       </EmailRowMessage>
       <EmailRowTime>{time}</EmailRowTime>
