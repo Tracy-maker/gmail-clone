@@ -78,6 +78,7 @@ const SendMail = () => {
 
         <div>
           <Button
+            className="sendMail__send"
             variant="contained"
             color="primary"
             type="submit"

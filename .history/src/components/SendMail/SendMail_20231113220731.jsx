@@ -76,8 +76,9 @@ const SendMail = () => {
 
         <SendMailError>Message is required</SendMailError>
 
-        <div>
+        <div className="sendMail__options">
           <Button
+            className="sendMail__send"
             variant="contained"
             color="primary"
             type="submit"

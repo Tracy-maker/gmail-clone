@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import { Close } from "@mui/icons-material";
 
 const SendMailWrapper = styled.div`
   position: absolute;
@@ -61,7 +60,7 @@ const SendMail = () => {
     <SendMailWrapper>
       <SendMailHeader>
         <HeaderText>New Message</HeaderText>
-        <Close/>
+        <CloseIcon className="sendMail__close" />
       </SendMailHeader>
 
       <SendMailForm>
@@ -76,8 +75,9 @@ const SendMail = () => {
 
         <SendMailError>Message is required</SendMailError>
 
-        <div>
+        <div className="sendMail__options">
           <Button
+            className="sendMail__send"
             variant="contained"
             color="primary"
             type="submit"

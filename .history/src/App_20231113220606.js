@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<EmailList />} />
           </Routes>
         </AppBody>
-        <SendMail />
+        <SendMail/>
       </AppContainer>
     </Router>
   );

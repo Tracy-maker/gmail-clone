@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
-import { Close } from "@mui/icons-material";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeSendMessage } from "./features/mailSlice";
+import { db } from "./firebase";
+import firebase from "firebase";
 
 const SendMailWrapper = styled.div`
   position: absolute;
@@ -61,7 +66,7 @@ const SendMail = () => {
     <SendMailWrapper>
       <SendMailHeader>
         <HeaderText>New Message</HeaderText>
-        <Close/>
+        <CloseIcon className="sendMail__close" />
       </SendMailHeader>
 
       <SendMailForm>
@@ -76,8 +81,9 @@ const SendMail = () => {
 
         <SendMailError>Message is required</SendMailError>
 
-        <div>
+        <div className="sendMail__options">
           <Button
+            className="sendMail__send"
             variant="contained"
             color="primary"
             type="submit"

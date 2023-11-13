@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
-import { Close } from "@mui/icons-material";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeSendMessage } from "./features/mailSlice";
+import { db } from "./firebase";
+import firebase from "firebase";
 
 const SendMailWrapper = styled.div`
   position: absolute;
@@ -57,27 +62,49 @@ const MessageInput = styled.input`
 `;
 
 const SendMail = () => {
+  
+
   return (
     <SendMailWrapper>
       <SendMailHeader>
         <HeaderText>New Message</HeaderText>
-        <Close/>
+        <CloseIcon
+          className="sendMail__close"
+        />
       </SendMailHeader>
 
-      <SendMailForm>
-        <InputField type="text" name="to" placeholder="To" />
-        <SendMailError>To is required</SendMailError>
+      <SendMailForm >
+        <InputField
+          type="text"
+          name="to"
+          placeholder="To"
+       
+        />
+      <SendMailError>To is required</SendMailError>
 
-        <InputField type="text" name="subject" placeholder="Subject" />
+        <InputField
+          type="text"
+          name="subject"
+          placeholder="Subject"
+        
+        />
+        
+          <SendMailError>Subject is required</SendMailError>
+        
 
-        <SendMailError>Subject is required</SendMailError>
+        <MessageInput
+          type="text"
+          name="message"
+          placeholder="Message..."
+        
+        />
+      
+          <SendMailError>Message is required</SendMailError>
+      
 
-        <MessageInput type="text" name="message" placeholder="Message..." />
-
-        <SendMailError>Message is required</SendMailError>
-
-        <div>
+        <div className="sendMail__options">
           <Button
+            className="sendMail__send"
             variant="contained"
             color="primary"
             type="submit"
