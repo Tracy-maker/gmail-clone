@@ -17,7 +17,6 @@ import React from "react";
 import styled from "styled-components";
 import SidebarOption from "../SidebarOption";
 import { useDispatch } from "react-redux";
-import { openSendMessage } from "../../features/mailSlice";
 
 const SidebarContainer = styled.div`
   flex: 0.3;
@@ -46,14 +45,11 @@ const FooterIcons = styled.div`
 `;
 
 const Sidebar = () => {
-  const dispatch = useDispatch();
+const dispath= useDispatch();
 
   return (
     <SidebarContainer>
-      <ComposeButton
-        onClick={() => dispatch(openSendMessage())}
-        startIcon={<AddIcon fontSize="large" />}
-      >
+      <ComposeButton startIcon={<AddIcon fontSize="large" />}>
         Compose
       </ComposeButton>
 

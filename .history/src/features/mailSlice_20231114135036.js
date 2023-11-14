@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const mailSlice = createSlice({
-  name: "mail",
+//   name: "mail",
   initialState,
   reducers: {
     selectMail: (state, action) => {

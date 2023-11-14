@@ -56,11 +56,8 @@ const InputField = styled.input`
 `;
 
 const MessageInput = styled.input`
-  height: 200px;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid whitesmoke;
-  outline: none;
+  flex: 1;
+  border: 0px solid;
 `;
 
 const SendMail = () => {
@@ -81,7 +78,7 @@ const SendMail = () => {
 
       <SendMailForm onSubmit={handleSubmit}>
         <InputField
-          type="email"
+          type="text"
           name="to"
           placeholder="To"
           {...register("to", { required: true })}
@@ -104,7 +101,7 @@ const SendMail = () => {
           {...register("message", { required: true })}
         />
 
-        {errors.message && <SendMailError>Message is required</SendMailError>}
+        {errors.message &&<SendMailError>Message is required</SendMailError>}
 
         <div>
           <Button variant="contained" color="primary" type="submit">

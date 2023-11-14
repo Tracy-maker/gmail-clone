@@ -56,11 +56,7 @@ const InputField = styled.input`
 `;
 
 const MessageInput = styled.input`
-  height: 200px;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid whitesmoke;
-  outline: none;
+  flex:5
 `;
 
 const SendMail = () => {
@@ -81,7 +77,7 @@ const SendMail = () => {
 
       <SendMailForm onSubmit={handleSubmit}>
         <InputField
-          type="email"
+          type="text"
           name="to"
           placeholder="To"
           {...register("to", { required: true })}

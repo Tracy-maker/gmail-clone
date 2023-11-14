@@ -46,13 +46,17 @@ const FooterIcons = styled.div`
 `;
 
 const Sidebar = () => {
-  const dispatch = useDispatch();
+  const dispath = useDispatch();
 
   return (
     <SidebarContainer>
       <ComposeButton
-        onClick={() => dispatch(openSendMessage())}
-        startIcon={<AddIcon fontSize="large" />}
+        startIcon={
+          <AddIcon
+            fontSize="large"
+            onClick={() => dispath(openSendMessage())}
+          />
+        }
       >
         Compose
       </ComposeButton>

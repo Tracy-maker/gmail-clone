@@ -50,9 +50,13 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <ComposeButton
-        onClick={() => dispatch(openSendMessage())}
-        startIcon={<AddIcon fontSize="large" />}
+      <ComposeButton    onClick={() => dispatch(openSendMessage())}
+        startIcon={
+          <AddIcon
+            fontSize="large"
+         
+          />
+        }
       >
         Compose
       </ComposeButton>

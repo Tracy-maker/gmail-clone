@@ -81,7 +81,7 @@ const SendMail = () => {
 
       <SendMailForm onSubmit={handleSubmit}>
         <InputField
-          type="email"
+          type="text"
           name="to"
           placeholder="To"
           {...register("to", { required: true })}

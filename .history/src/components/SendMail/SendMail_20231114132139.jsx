@@ -56,11 +56,8 @@ const InputField = styled.input`
 `;
 
 const MessageInput = styled.input`
-  height: 200px;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid whitesmoke;
-  outline: none;
+  flex: 1;
+  border: 0px solid;
 `;
 
 const SendMail = () => {
@@ -79,32 +76,17 @@ const SendMail = () => {
         <Close onClick={() => dispatch(closeSendMessage())} />
       </SendMailHeader>
 
-      <SendMailForm onSubmit={handleSubmit}>
-        <InputField
-          type="email"
-          name="to"
-          placeholder="To"
-          {...register("to", { required: true })}
-        />
-        {errors.to && <SendMailError>To is required</SendMailError>}
+      <SendMailForm>
+        <InputField type="text" name="to" placeholder="To" />
+        <SendMailError>To is required</SendMailError>
 
-        <InputField
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          {...register("subject", { required: true })}
-        />
+        <InputField type="text" name="subject" placeholder="Subject" />
 
-        {errors.subject && <SendMailError>Subject is required</SendMailError>}
+        <SendMailError>Subject is required</SendMailError>
 
-        <MessageInput
-          type="text"
-          name="message"
-          placeholder="Message..."
-          {...register("message", { required: true })}
-        />
+        <MessageInput type="text" name="message" placeholder="Message..." />
 
-        {errors.message && <SendMailError>Message is required</SendMailError>}
+        <SendMailError>Message is required</SendMailError>
 
         <div>
           <Button variant="contained" color="primary" type="submit">
