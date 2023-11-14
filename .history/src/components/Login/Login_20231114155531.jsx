@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../../firebase";
 import { signInWithPopup } from "firebase/auth";
-import { login } from "../../features/userSlice";
 
 const LoginContainer = styled.div`
   background-color: #f2f2f2;
@@ -58,7 +57,7 @@ const Login = () => {
           src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-16.png"
           alt="gmail m logo"
         />
-        <LoginButton variant="contained" color="primary" onClick={signIn}>
+        <LoginButton variant="contained" color="primary">
           Login
         </LoginButton>
       </LoginContent>

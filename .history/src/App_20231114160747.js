@@ -38,26 +38,23 @@ function App() {
         );
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Router>
-      {!user ? (
-        <Login />
-      ) : (
-        <AppContainer>
-          <Header />
-          <AppBody>
-            <Sidebar />
-            <Routes>
-              <Route path="/mail" element={<Mail />} />
-              <Route path="/" element={<EmailList />} />
-            </Routes>
-          </AppBody>
-          {sendMessageIsOpen && <SendMail />}
-        </AppContainer>
-      )}
+      {!user ?(<Login/>):(<AppContainer>
+        <Header />
+        <AppBody>
+          <Sidebar />
+          <Routes>
+            <Route path="/mail" element={<Mail />} />
+            <Route path="/" element={<EmailList />} />
+          </Routes>
+        </AppBody>
+        {sendMessageIsOpen && <SendMail />}
+      </AppContainer>)}
+      
     </Router>
   );
 }

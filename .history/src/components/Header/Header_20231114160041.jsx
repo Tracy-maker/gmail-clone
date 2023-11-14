@@ -62,8 +62,8 @@ const Header = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const signOut = () => {
-    auth.signOut().then(() => {
-      dispatch(logout);
+    auth.signOut().then(()=>{
+      dispatch(logout)
     });
   };
 
@@ -93,7 +93,7 @@ const Header = () => {
         <IconButton>
           <Notifications />
         </IconButton>
-        <Avatar src={user?.photo} onClick={signOut} />
+        <Avatar />
       </HeaderRight>
     </HeaderContainer>
   );

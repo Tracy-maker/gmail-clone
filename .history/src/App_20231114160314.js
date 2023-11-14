@@ -9,8 +9,7 @@ import Login from "./components/Login";
 import SendMail from "./components/SendMail/SendMail";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSendMessageIsOpen } from "./features/mailSlice";
-import { login, selectUser } from "./features/userSlice";
-import { auth } from "./firebase";
+import { selectUser } from "./features/userSlice";
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -26,38 +25,23 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        dispatch(
-          login({
-            name: user.displayName,
-            email: user.email,
-            photo: user.photoURL,
-          })
-        );
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(()=>{
+    
   }, []);
 
   return (
     <Router>
-      {!user ? (
-        <Login />
-      ) : (
-        <AppContainer>
-          <Header />
-          <AppBody>
-            <Sidebar />
-            <Routes>
-              <Route path="/mail" element={<Mail />} />
-              <Route path="/" element={<EmailList />} />
-            </Routes>
-          </AppBody>
-          {sendMessageIsOpen && <SendMail />}
-        </AppContainer>
-      )}
+      <AppContainer>
+        <Header />
+        <AppBody>
+          <Sidebar />
+          <Routes>
+            <Route path="/mail" element={<Mail />} />
+            <Route path="/" element={<EmailList />} />
+          </Routes>
+        </AppBody>
+        {sendMessageIsOpen && <SendMail />}
+      </AppContainer>
     </Router>
   );
 }

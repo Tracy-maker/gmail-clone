@@ -29,35 +29,28 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
-        dispatch(
-          login({
-            name: user.displayName,
-            email: user.email,
-            photo: user.photoURL,
-          })
-        );
+        dispatch(login({
+          name: user.displayName,
+          email: user.email ,
+          photo:user.photoURL,
+        }));
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Router>
-      {!user ? (
-        <Login />
-      ) : (
-        <AppContainer>
-          <Header />
-          <AppBody>
-            <Sidebar />
-            <Routes>
-              <Route path="/mail" element={<Mail />} />
-              <Route path="/" element={<EmailList />} />
-            </Routes>
-          </AppBody>
-          {sendMessageIsOpen && <SendMail />}
-        </AppContainer>
-      )}
+      <AppContainer>
+        <Header />
+        <AppBody>
+          <Sidebar />
+          <Routes>
+            <Route path="/mail" element={<Mail />} />
+            <Route path="/" element={<EmailList />} />
+          </Routes>
+        </AppBody>
+        {sendMessageIsOpen && <SendMail />}
+      </AppContainer>
     </Router>
   );
 }

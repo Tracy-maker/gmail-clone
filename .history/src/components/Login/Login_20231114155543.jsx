@@ -58,7 +58,7 @@ const Login = () => {
           src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-16.png"
           alt="gmail m logo"
         />
-        <LoginButton variant="contained" color="primary" onClick={signIn}>
+        <LoginButton variant="contained" color="primary">
           Login
         </LoginButton>
       </LoginContent>

@@ -8,9 +8,8 @@ import {
   Notifications,
   Search,
 } from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../../features/userSlice";
-import { auth } from "../../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -60,12 +59,6 @@ const HeaderRight = styled.div`
 
 const Header = () => {
   const user = useSelector(selectUser);
-  const dispatch = useDispatch();
-  const signOut = () => {
-    auth.signOut().then(() => {
-      dispatch(logout);
-    });
-  };
 
   return (
     <HeaderContainer>
@@ -93,7 +86,7 @@ const Header = () => {
         <IconButton>
           <Notifications />
         </IconButton>
-        <Avatar src={user?.photo} onClick={signOut} />
+        <Avatar />
       </HeaderRight>
     </HeaderContainer>
   );

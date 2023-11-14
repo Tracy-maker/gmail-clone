@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { auth, provider } from "../../firebase";
-import { signInWithPopup } from "firebase/auth";
-import { login } from "../../features/userSlice";
 
 const LoginContainer = styled.div`
   background-color: #f2f2f2;
@@ -34,22 +30,6 @@ const LoginButton = styled(Button)`
 
 const Login = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
-
-  const signIn = () => {
-    signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          login({
-            name: user.displayName,
-            email: user.email,
-            photo: user.photoURL,
-          })
-        );
-        history("/");
-      })
-      .catch((error) => alert(error.message));
-  };
 
   return (
     <LoginContainer>
@@ -58,7 +38,7 @@ const Login = () => {
           src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-16.png"
           alt="gmail m logo"
         />
-        <LoginButton variant="contained" color="primary" onClick={signIn}>
+        <LoginButton variant="contained" color="primary">
           Login
         </LoginButton>
       </LoginContent>
