@@ -82,7 +82,7 @@ const SendMail = () => {
       message: formData.message,
       timestamp: serverTimestamp(),
     });
-    dispatch(closeSendMessage());
+    dispatch(closeSendMessage())
   };
 
   return (

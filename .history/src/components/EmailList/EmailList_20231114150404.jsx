@@ -11,7 +11,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Section from "../Section";
 import { Inbox, LocalOfferOutlined, People } from "@mui/icons-material";
 import EmailRow from "../EmailRow/EmailRow";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const EmailListContainer = styled.div`
@@ -48,14 +48,6 @@ const EmailList = () => {
 
   useEffect(() => {
     const q = query(collection(db, "email"), orderBy("timestamp", "desc"));
-    onSnapshot(q, (snapshot) =>
-      setEmails(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
   }, []);
 
   return (
@@ -94,16 +86,12 @@ const EmailList = () => {
         <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
       </StyledEmailListSections>
       <EmailListList>
-        {emails.map(({ id, data: { to, subject, timestamp, message } }) => (
-          <EmailRow
-            id={id}
-            key={id}
-            title={to}
-            subject={subject}
-            time={new Date(timestamp?.seconds * 1000).toLocaleTimeString()}
-            description={message}
-          />
-        ))}
+        <EmailRow
+          title="Twitch"
+          subject="what you are guys don't understands, for us, kissing is as important as any part of it."
+          description="This is a text"
+          time="10pm"
+        />
       </EmailListList>
     </EmailListContainer>
   );

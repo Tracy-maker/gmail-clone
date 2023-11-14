@@ -5,7 +5,7 @@ import { Close } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMessage } from "../../features/mailSlice";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const SendMailWrapper = styled.div`
@@ -76,13 +76,7 @@ const SendMail = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (formData) => {
-    addDoc(collection(db, "email"), {
-      to: formData.to,
-      subject: formData.subject,
-      message: formData.message,
-      timestamp: serverTimestamp(),
-    });
-    dispatch(closeSendMessage());
+    addDoc(collection(db, "email"), {});
   };
 
   return (

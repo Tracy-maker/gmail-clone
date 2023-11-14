@@ -94,16 +94,14 @@ const EmailList = () => {
         <Section Icon={LocalOfferOutlined} title="Promotions" color="green" />
       </StyledEmailListSections>
       <EmailListList>
-        {emails.map(({ id, data: { to, subject, timestamp, message } }) => (
-          <EmailRow
-            id={id}
-            key={id}
-            title={to}
-            subject={subject}
-            time={new Date(timestamp?.seconds * 1000).toLocaleTimeString()}
-            description={message}
-          />
-        ))}
+        {emails.map(({id,data:{to,subject,timestamp,message}})=>( <EmailRow
+          id={id}
+          key={id}
+          title={to}
+          subject={subject}
+          time={new Date(timestamp?.seconds *1000).toLocaleTimeString}
+        />))}
+       
       </EmailListList>
     </EmailListContainer>
   );

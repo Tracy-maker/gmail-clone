@@ -64,11 +64,11 @@ const EmailRow = ({ id, title, subject, description, time }) => {
 
   const openMail = () => {
     dispatch(selectMail({ id, title, subject, description, time }));
-    history("/mail");
+    history("/mail")
   };
 
   return (
-    <EmailRowContainer onClick={openMail}>
+    <EmailRowContainer onClick={openMail }>
       <EmailRowOptions>
         <Checkbox />
         <IconButton>

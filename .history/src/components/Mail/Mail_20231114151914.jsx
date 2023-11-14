@@ -139,7 +139,7 @@ const Mail = () => {
         </MailBodyHeader>
 
         <MailMessage>
-          <MailMessageText>{selectedMail?.description}</MailMessageText>
+          <MailMessageText></MailMessageText>
         </MailMessage>
       </MailBody>
     </MailContainer>

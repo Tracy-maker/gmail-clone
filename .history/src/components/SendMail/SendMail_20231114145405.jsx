@@ -77,12 +77,11 @@ const SendMail = () => {
 
   const onSubmit = (formData) => {
     addDoc(collection(db, "email"), {
-      to: formData.to,
+      to:formData.to,
       subject: formData.subject,
       message: formData.message,
-      timestamp: serverTimestamp(),
+      timestamp:serverTimestamp(),
     });
-    dispatch(closeSendMessage());
   };
 
   return (

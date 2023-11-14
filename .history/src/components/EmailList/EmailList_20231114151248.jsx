@@ -101,7 +101,6 @@ const EmailList = () => {
             title={to}
             subject={subject}
             time={new Date(timestamp?.seconds * 1000).toLocaleTimeString()}
-            description={message}
           />
         ))}
       </EmailListList>

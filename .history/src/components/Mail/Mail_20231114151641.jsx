@@ -118,7 +118,7 @@ const Mail = () => {
           </Icon>
         </MailToolsLeft>
 
-        <div>
+        <div >
           <Icon>
             <UnfoldMore />
           </Icon>
@@ -132,14 +132,14 @@ const Mail = () => {
       </MailTools>
       <MailBody>
         <MailBodyHeader>
-          <MailBodyHeaderText>{selectedMail?.subject}</MailBodyHeaderText>
+          <MailBodyHeaderText></MailBodyHeaderText>
           <MailImportantIcon />
-          <p>{selectedMail?.title}</p>
-          <MailTime>{selectedMail?.time}</MailTime>
+          <p></p>
+          <MailTime></MailTime>
         </MailBodyHeader>
 
         <MailMessage>
-          <MailMessageText>{selectedMail?.description}</MailMessageText>
+          <MailMessageText></MailMessageText>
         </MailMessage>
       </MailBody>
     </MailContainer>

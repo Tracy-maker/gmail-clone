@@ -5,7 +5,6 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import { Checkbox, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { selectMail } from "../../features/mailSlice";
 
 const EmailRowContainer = styled.div`
   display: flex;
@@ -62,13 +61,10 @@ const EmailRow = ({ id, title, subject, description, time }) => {
 
   const dispatch = useDispatch();
 
-  const openMail = () => {
-    dispatch(selectMail({ id, title, subject, description, time }));
-    history("/mail");
-  };
+  const openMail = () => {};
 
   return (
-    <EmailRowContainer onClick={openMail}>
+    <EmailRowContainer onClick={() => history("/mail")}>
       <EmailRowOptions>
         <Checkbox />
         <IconButton>
