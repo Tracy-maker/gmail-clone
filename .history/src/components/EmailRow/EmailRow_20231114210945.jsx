@@ -38,17 +38,16 @@ const EmailRowMessage = styled.div`
 `;
 
 const EmailRowMessageText = styled.h4`
-  display: flex;
- width: 400px;
+  width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 `;
 
 const EmailRowDescription = styled.p`
- 
+  display: flex;
   font-weight: 400;
   color: gray;
 `;
