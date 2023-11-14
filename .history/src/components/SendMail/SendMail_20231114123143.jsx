@@ -44,7 +44,7 @@ const SendMailError = styled.p`
   padding: 2px;
 `;
 
-const InputField = styled.input`
+const InputField = styled.div`
   height: 30px;
   padding: 10px;
   border: none;
@@ -54,7 +54,6 @@ const InputField = styled.input`
 
 const MessageInput = styled.input`
   flex: 1;
-  border: 0px solid;
 `;
 
 const SendMail = () => {

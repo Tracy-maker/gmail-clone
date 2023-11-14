@@ -38,7 +38,7 @@ const MailBody = styled.div`
   margin: 30px;
   background-color: white;
   padding: 20px;
-  height: 84%;
+  height: 83%;
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.24);
 `;
 

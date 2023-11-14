@@ -54,7 +54,6 @@ const InputField = styled.input`
 
 const MessageInput = styled.input`
   flex: 1;
-  border: 0px solid;
 `;
 
 const SendMail = () => {
