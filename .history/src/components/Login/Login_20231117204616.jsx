@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { login } from "../../features/userSlice";
-import { IconButton } from "@mui/material";
+import { SmartButton } from "@mui/icons-material";
+
 
 const LoginContainer = styled.div`
   background-color: #f2f2f2;
@@ -25,7 +26,7 @@ const GmailLogo = styled.img`
   margin-bottom: 30px;
 `;
 
-const LoginButton = styled(IconButton)`
+const LoginButton = styled(SmartButton)`
   && {
     background-color: #1a73e8;
     color: white;
